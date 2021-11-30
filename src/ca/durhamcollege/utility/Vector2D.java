@@ -1,10 +1,10 @@
 // Name: Devanshi Patel
 // Student ID: 100805084
-// Date: November 26, 2021
+// Date: November 29, 2021
 // Course: OOP3200
-// Assignment type: In-Class Exercise (ICE10)
+// Assignment type: In-Class Exercise (ICE11)
 
-package ca.durhamcollege;
+package ca.durhamcollege.utility;
 
 public class Vector2D
 {
@@ -196,6 +196,22 @@ public class Vector2D
         final var delta_y = (double)(b.getY()) - (double)(a.getY());
 
         return (float)(Math.sqrt(delta_x * delta_x + delta_y * delta_y));
+    }
+
+    public static final Vector2D random(final Vector2D start, final Vector2D end)
+    {
+        // Generate random Y values
+        float minX = Mathf.Min(start.getX(), end.getX());
+        float maxX = Mathf.Max(start.getX(), end.getX());
+        float randomX = Mathf.RandomRange(minX, maxX);
+
+        // Generate random X values
+        float minY = Mathf.Min(start.getY(), end.getY());
+        float maxY = Mathf.Max(start.getY(), end.getY());
+        float randomY = Mathf.RandomRange(minY, maxY);
+
+        return new Vector2D(randomX, randomY);
+
     }
 
 }
